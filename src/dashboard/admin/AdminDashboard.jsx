@@ -1,8 +1,8 @@
 import React from 'react'
-import StatCard from "@/components/common/StatCard"
+import StatCard from "@/website/StatCard"
 import { dashboardStats } from "@/data/mockData"
-import BoothTrafficChart from '@/components/BoothTrafficChart'
 import AdminLayout from '@/components/Layout/admin/AdminLayout'
+import BoothTrafficChart from './BoothTrafficChart'
 
 const AdminDashboard = () => (
   <AdminLayout>

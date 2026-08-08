@@ -159,3 +159,123 @@ export const mockExhibitors = [
     boothNumber: null,
   },
 ];
+
+export const mockEvents = [
+  {
+    id: 1,
+    title: "Tech Innovation Expo 2026",
+    category: "expo",
+    date: "2026-09-15",
+    location: "Karachi Expo Center",
+    image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80",
+    status: "upcoming",
+    description: "Explore cutting-edge technology from 200+ exhibitors across AI, robotics, and fintech.",
+  },
+  {
+    id: 2,
+    title: "Global Trade Summit",
+    category: "conference",
+    date: "2026-08-20",
+    location: "Pearl Continental, Lahore",
+    image: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800&q=80",
+    status: "ongoing",
+    description: "Industry leaders discuss the future of international trade and supply chains.",
+  },
+  {
+    id: 3,
+    title: "Sunset Beats Music Festival",
+    category: "concert",
+    date: "2026-10-05",
+    location: "DHA Beach, Karachi",
+    image: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&q=80",
+    status: "upcoming",
+    description: "A night of live performances from top regional artists under the stars.",
+  },
+  {
+    id: 4,
+    title: "Startup Founders Workshop",
+    category: "workshop",
+    date: "2026-07-28",
+    location: "NIC Karachi",
+    image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&q=80",
+    status: "past",
+    description: "Hands-on session covering fundraising, pitch decks, and early-stage growth.",
+  },
+  {
+    id: 5,
+    title: "HealthTech Expo",
+    category: "expo",
+    date: "2026-11-12",
+    location: "Expo Centre Lahore",
+    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80",
+    status: "upcoming",
+    description: "Showcasing the latest in medical devices, telehealth, and digital diagnostics.",
+  },
+  {
+    id: 6,
+    title: "Design & Branding Conference",
+    category: "conference",
+    date: "2026-08-30",
+    location: "Mövenpick Hotel, Karachi",
+    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&q=80",
+    status: "upcoming",
+    description: "Creative leaders share insights on brand strategy and visual identity.",
+  },
+];
+
+export const mockGallery = [
+  { id: 1, image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&q=80", caption: "Tech Innovation Expo — Main Hall", size: "large" },
+  { id: 2, image: "https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?w=600&q=80", caption: "Networking Session", size: "small" },
+  { id: 3, image: "https://images.unsplash.com/photo-1511578314322-379afb476865?w=600&q=80", caption: "Keynote Speaker Address", size: "medium" },
+  { id: 4, image: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=600&q=80", caption: "Global Trade Summit Panel", size: "small" },
+  { id: 5, image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=600&q=80", caption: "Exhibitor Booth Setup", size: "large" },
+  { id: 6, image: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=600&q=80", caption: "Sunset Beats Music Festival", size: "medium" },
+  { id: 7, image: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=600&q=80", caption: "Live Performance Crowd", size: "small" },
+  { id: 8, image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=600&q=80", caption: "Startup Workshop Session", size: "large" },
+  { id: 9, image: "https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=600&q=80", caption: "Award Ceremony Moment", size: "medium" },
+  { id: 10, image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80", caption: "Conference Attendees Networking", size: "small" },
+];
+
+export const mockTestimonials = [
+  {
+    id: 1,
+    name: "Ahmed Raza",
+    role: "Exhibitor, Tech Innovation Expo",
+    quote: "EventSphere made booth booking effortless. We tracked visitor traffic in real time and it completely changed how we planned our next expo.",
+  },
+  {
+    id: 2,
+    name: "Sana Malik",
+    role: "Attendee, Global Trade Summit",
+    quote: "I loved how easy it was to browse exhibitors and bookmark sessions ahead of time. No more printed schedules or confusion at the venue.",
+  },
+  {
+    id: 3,
+    name: "Bilal Sheikh",
+    role: "Organizer, HealthTech Expo",
+    quote: "Managing hundreds of exhibitor applications used to take weeks. With EventSphere's dashboard, we approved and assigned booths in a single afternoon.",
+  },
+];
+
+export const mockFAQs = [
+  {
+    id: 1,
+    question: "How do I register as an exhibitor?",
+    answer: "Simply sign up on the Register page, select 'Exhibitor' as your role, and submit your company details. Once approved by the event organizer, you'll be able to select and reserve your booth.",
+  },
+  {
+    id: 2,
+    question: "Can I attend multiple events with one account?",
+    answer: "Yes. Your EventSphere account works across all events on the platform — you can browse, register, and bookmark sessions for any expo, conference, or concert.",
+  },
+  {
+    id: 3,
+    question: "How does booth selection work for exhibitors?",
+    answer: "After your application is approved, you'll get access to an interactive floor plan showing available booths. You can select and reserve a space based on your preferences and budget.",
+  },
+  {
+    id: 4,
+    question: "Is there a fee to create an organizer account?",
+    answer: "No, creating an account is completely free. Organizers only manage their own events — pricing for exhibitor booths or attendee tickets is set individually per event.",
+  },
+];

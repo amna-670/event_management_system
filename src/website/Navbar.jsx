@@ -17,9 +17,18 @@ const Navbar = () => {
           <Link to="/home" className="text-sm text-muted transition-colors hover:text-foreground">
             Home
           </Link>
+          <Link to="/#events" className="text-sm text-muted transition-colors hover:text-foreground">
+  Events
+</Link>
+<Link to="/#gallery" className="text-sm text-muted transition-colors hover:text-foreground">
+  Gallery
+</Link>
           <Link to="/about" className="text-sm text-muted transition-colors hover:text-foreground">
             About
           </Link>
+          <Link to="/#faq" className="text-sm text-muted transition-colors hover:text-foreground">
+  FAQ
+</Link>
         </nav>
 
         {/* Desktop CTA */}
@@ -47,19 +56,39 @@ const Navbar = () => {
         <div className="border-t border-border bg-background px-8 py-4 md:hidden animate-in fade-in slide-in-from-top-2 duration-200">
           <nav className="flex flex-col gap-4">
             
-            <a  href="#features"
-              onClick={() => setIsOpen(false)}
-              className="text-sm text-muted transition-colors hover:text-foreground"
-            >
+            <Link
+  to="/#events"
+  onClick={() => setIsOpen(false)}
+  className="text-sm text-muted transition-colors hover:text-foreground"
+>
+  Events
+</Link>
+
+<Link
+  to="/#gallery"
+  onClick={() => setIsOpen(false)}
+  className="text-sm text-muted transition-colors hover:text-foreground"
+>
+  Gallery
+</Link>
+
+<Link
+  to="/#faq"
+  onClick={() => setIsOpen(false)}
+  className="text-sm text-muted transition-colors hover:text-foreground"
+>
+  FAQ
+</Link>
+
+            <Link
+  to="/#features"
+  onClick={() => setIsOpen(false)}
+  className="text-sm text-muted transition-colors hover:text-foreground"
+>
+
               Features
-            </a>
-            
-            <a  href="#stats"
-              onClick={() => setIsOpen(false)}
-              className="text-sm text-muted transition-colors hover:text-foreground"
-            >
-              Our Impact
-            </a>
+            </Link>
+
             <Link
               to="/about"
               onClick={() => setIsOpen(false)}

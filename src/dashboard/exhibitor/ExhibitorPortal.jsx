@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import StatCard from "@/components/common/StatCard";
+import StatCard from "@/website/StatCard";
 import ExhibitorLayout from "@/components/Layout/exhibitor/ExhibitorLayout";
 
 const stats = [

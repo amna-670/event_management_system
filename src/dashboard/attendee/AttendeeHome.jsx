@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import AttendeeLayout from "@/components/Layout/attendee/AttendeeLayout";
-import StatCard from "@/components/common/StatCard";
+import StatCard from "@/website/StatCard";
 
 
 const stats = [

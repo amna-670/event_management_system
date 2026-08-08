@@ -1,5 +1,6 @@
+import { boothTrafficData } from "@/data/mockData";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer} from "recharts";
-import { boothTrafficData } from "../data/mockData";
+
 
 const BoothTrafficChart = () => {
   return (

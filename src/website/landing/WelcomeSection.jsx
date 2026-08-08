@@ -1,4 +1,8 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef } from 'react'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+gsap.registerPlugin(ScrollTrigger)
 
 const pillars = [
   { label: "Industrial Fairs", dot: "bg-gold", hover: "hover:border-gold/30" },
@@ -7,35 +11,42 @@ const pillars = [
 ]
 
 const WelcomeSection = () => {
-  const [isVisible, setIsVisible] = useState(false)
   const sectionRef = useRef(null)
+  const contentRef = useRef(null)
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-          observer.unobserve(entry.target)
-        }
+ useEffect(() => {
+  const ctx = gsap.context(() => {
+    gsap.from(contentRef.current, {
+      opacity: 0,
+      x: -80,
+      duration: 1,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: "top 85%",
+        once: true,
       },
-      { threshold: 0.05 }
-    )
-    if (sectionRef.current) observer.observe(sectionRef.current)
-    return () => observer.disconnect()
-  }, [])
+    })
+  }, sectionRef)
 
+  const handleLoad = () => ScrollTrigger.refresh()
+  window.addEventListener("load", handleLoad)
+
+  return () => {
+    ctx.revert()
+    window.removeEventListener("load", handleLoad)
+  }
+}, [])
   return (
     <section
       id="welcome"
       ref={sectionRef}
-      className={`border-t border-border bg-surface/10 px-8 py-20 relative overflow-hidden transition-all duration-1000 ease-out transform ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'
-      }`}
+      className="border-t border-border bg-surface/10 px-8 py-20 relative overflow-hidden"
     >
       <div className="absolute left-0 right-0 top-0 h-[1.5px] bg-linear-to-r from-transparent via-gold to-transparent bg-size-[200%_auto] animate-gradient-shift" />
       <div className="pointer-events-none absolute left-1/2 top-1/2 h-87.5 w-150 -translate-x-1/2 -translate-y-1/2 rounded-full bg-emerald/5 blur-3xl animate-float-glow" />
 
-      <div className="mx-auto max-w-4xl text-center relative z-10">
+      <div ref={contentRef} className="mx-auto max-w-4xl text-center relative z-10">
         <span className="font-mono text-xs uppercase tracking-[0.2em] text-gold">
           Who We Are
         </span>

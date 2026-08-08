@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { Building2, Users, LayoutGrid, ShieldCheck, Zap, CheckCircle2, ArrowRight } from 'lucide-react'
-import Navbar from '@/components/common/Navbar'
-import Footer from './landing/Footer'
+import Navbar from '@/website/Navbar'
+import Footer from '../landing/Footer'
 
 const About = () => {
   return (
