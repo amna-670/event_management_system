@@ -1,16 +1,60 @@
-# React + Vite
+# EventSphere Management
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+## Project Status: 🚧 Incomplete / Under Development
 
-Currently, two official plugins are available:
+EventSphere Management is a MERN stack capstone project focused on creating an expo and trade show management platform.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+The project is currently under development and is **not yet complete**. The current version contains the frontend implementation and several core UI features, while backend integration and some advanced functionalities are still in progress.
 
-## React Compiler
+## Current Features Implemented
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* Modern dark-themed convention floor UI
+* Landing page with responsive sections
+* Admin dashboard interface
+* Expo management UI
+* Booth management UI
+* Schedule management UI
+* Exhibitor portal interface
+* Attendee portal interface
+* Role-based login flow (Admin, Exhibitor, Attendee)
+* Redux Toolkit setup for authentication state
+* Responsive layouts and reusable components
+* Toast notifications
+* Charts and data visualization
 
-## Expanding the Oxlint configuration
+## Features Still In Progress
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+The following features are planned but not completed yet:
+
+* Backend development using Express.js and MongoDB
+* Real authentication system
+* User registration with database storage
+* Protected routes
+* Complete exhibitor management workflow
+* Booth selection and reservation system
+* Floor plan integration
+* Messaging system between users
+* Event registration system
+* Notifications and reminders
+* Complete admin analytics module
+
+## Tech Stack
+
+* React + Vite
+* JavaScript
+* Tailwind CSS v4
+* React Router DOM
+* Redux Toolkit
+* Recharts
+* Lucide React
+* shadcn/ui
+* Sonner Notifications
+* (Backend will be added later)
+
+## Project Purpose
+
+This project is being developed as a learning-focused MERN capstone project. The goal is to gradually build a complete expo management platform while improving frontend architecture, state management, authentication, and backend integration skills.
+
+## Note
+
+This repository represents an ongoing project. The application is currently incomplete and additional features will be implemented in future updates.
