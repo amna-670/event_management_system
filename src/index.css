@@ -46,7 +46,8 @@
   }
 
   @keyframes float-image {
-    0%, 100% {
+    0%,
+    100% {
       transform: translateY(0px) rotate(0deg);
     }
     50% {
@@ -94,6 +95,24 @@
   }
 }
 
+/* Image overlays */
+:root {
+  --image-overlay: rgba(20, 22, 28, 0.45);
+}
+
+/* Light Theme */
+.light {
+  --color-background: #F7F5EF;
+  --color-surface: #FFFFFF;
+  --color-gold: #9A7412;
+  --color-emerald: #17604F;
+  --color-foreground: #1B1D22;
+  --color-muted: #666A73;
+  --color-border: #DDD9CE;
+
+  --image-overlay: rgba(247, 245, 239, 0.15);
+}
+
 body {
   background-color: var(--color-background);
   color: var(--color-foreground);
@@ -102,8 +121,20 @@ body {
 
 @utility bg-grid-pattern {
   background-size: 55px 55px;
-  background-image: 
-    linear-gradient(to right, rgba(42, 46, 56, 0.35) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(42, 46, 56, 0.35) 1px, transparent 1px);
-  mask-image: radial-gradient(ellipse at center, black, transparent 65%);
+  background-image:
+    linear-gradient(
+      to right,
+      rgba(42, 46, 56, 0.18) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(42, 46, 56, 0.18) 1px,
+      transparent 1px
+    );
+  mask-image: radial-gradient(
+    ellipse at center,
+    black,
+    transparent 65%
+  );
 }

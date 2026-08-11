@@ -82,29 +82,37 @@ const About = () => {
       <Navbar />
 
       {/* Banner */}
-      <section ref={bannerRef} className="relative overflow-hidden border-b border-border">
-        <div
-          className="about-banner-image absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${aboutBanner})` }}
-        />
+      <section
+  ref={bannerRef}
+  className="relative overflow-hidden border-b border-border"
+>
+  <div
+    className="about-banner-image absolute inset-0 bg-cover bg-center"
+    style={{ backgroundImage: `url(${aboutBanner})` }}
+  />
 
-        <div className="absolute inset-0 bg-background/85" />
+  <div
+    className="absolute inset-0"
+    style={{ backgroundColor: "var(--image-overlay)" }}
+  />
 
-        <div className="relative px-6 py-24 text-center">
-         <span className="about-banner-content font-mono text-xs uppercase tracking-[0.2em] text-gold">
-  The EventSphere Experience
-</span>
+  <div className="relative z-10 text-center">
+    <div className="w-full bg-background/70 px-6 py-24">
+      <span className="about-banner-content font-mono text-xs uppercase tracking-[0.2em] text-gold">
+        The EventSphere Experience
+      </span>
 
-<h1 className="about-banner-content font-display mt-4 text-4xl sm:text-5xl font-bold">
-  Where Events Come Together
-</h1>
+      <h1 className="about-banner-content mt-4 font-display text-4xl font-bold sm:text-5xl text-foreground">
+        Where Events Come Together
+      </h1>
 
-<p className="about-banner-content mt-5 max-w-2xl mx-auto text-muted">
-  A unified platform designed to connect organizers, exhibitors, and attendees
-  throughout every stage of an event.
-</p>
-        </div>
-      </section>
+      <p className="about-banner-content mx-auto mt-5 max-w-2xl text-foreground/90">
+        A unified platform designed to connect organizers, exhibitors, and
+        attendees throughout every stage of an event.
+      </p>
+    </div>
+  </div>
+</section>
 
       <main className="min-h-screen bg-background px-6 py-16">
         <div className="max-w-5xl mx-auto space-y-16">

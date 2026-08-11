@@ -27,12 +27,12 @@ const Events = () => {
       ? mockEvents
       : mockEvents.filter((event) => event.category === activeCategory);
 
-  useEffect(() => {
+ useEffect(() => {
   const ctx = gsap.context(() => {
-    // Banner background animation
-    gsap.from(".banner-image", {
+    // Banner image animation
+    gsap.from(".events-banner-image", {
       scale: 1.15,
-      duration: 1.8,
+      duration: 1.6,
       ease: "power2.out",
     });
 
@@ -69,35 +69,34 @@ const Events = () => {
       <Navbar />
 
     
-<section ref={bannerRef} className="relative overflow-hidden border-b border-border">
+<section className="relative overflow-hidden border-b border-border">
   <div
-  className="banner-image absolute inset-0 bg-cover bg-center"
-  style={{
-    backgroundImage: `url(${eventsBanner})`,
-  }}
-/>
+    className="events-banner-image absolute inset-0 bg-cover bg-center"
+    style={{ backgroundImage: `url(${eventsBanner})` }}
+  />
 
-  <div className="absolute inset-0 bg-background/60" />
+  <div
+    className="absolute inset-0"
+    style={{ backgroundColor: "var(--image-overlay)" }}
+  />
 
-  <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-gold/10" />
-
-  <div className="relative px-6 py-24">
-    <div className="max-w-6xl mx-auto text-center">
+  <div className="relative z-10 text-center">
+    <div className="w-full bg-background/70 px-6 py-24">
       <span className="banner-content font-mono text-xs uppercase tracking-[0.2em] text-gold">
-  Browse All
-</span>
+        Browse All
+      </span>
 
-<h1 className="banner-content font-display mt-4 text-4xl sm:text-5xl font-bold text-foreground">
-  All Events
-</h1>
+      <h1 className="banner-content mt-4 font-display text-4xl font-bold text-foreground sm:text-5xl">
+        Explore Our Events
+      </h1>
 
-<p className="banner-content mt-5 text-muted max-w-2xl mx-auto leading-relaxed">
-  Explore every expo, conference, concert, and workshop hosted on EventSphere.
-</p>
+      <p className="banner-content mx-auto mt-5 max-w-2xl text-foreground/90">
+        Explore every expo, conference, concert, and workshop hosted on
+        EventSphere.
+      </p>
     </div>
   </div>
 </section>
-
 
       <EventCategories
         activeCategory={activeCategory}

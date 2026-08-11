@@ -7,7 +7,7 @@ const Hero = () => (
     className="relative overflow-hidden px-8 py-20 md:py-32 bg-cover bg-center bg-no-repeat"
     style={{ backgroundImage: `url(${heroImage})` }}>
  
-    <div className="pointer-events-none absolute inset-0 bg-background/80 backdrop-blur-[2px]" />
+    <div className="pointer-events-none absolute inset-0 bg-background/80" />
     <div className="pointer-events-none absolute inset-0 bg-grid-pattern opacity-40 animate-pan-grid" />
     <div className="pointer-events-none absolute left-1/2 top-0 h-[500px] w-[800px] -translate-x-1/2 rounded-full bg-gold/10 blur-3xl animate-float-glow" />
 
