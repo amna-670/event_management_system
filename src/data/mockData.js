@@ -170,6 +170,7 @@ export const mockEvents = [
     image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80",
     status: "upcoming",
     description: "Explore cutting-edge technology from 200+ exhibitors across AI, robotics, and fintech.",
+    featured: true,
   },
   {
     id: 2,
@@ -180,6 +181,7 @@ export const mockEvents = [
     image: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800&q=80",
     status: "ongoing",
     description: "Industry leaders discuss the future of international trade and supply chains.",
+    featured: true,
   },
   {
     id: 3,
@@ -190,6 +192,7 @@ export const mockEvents = [
     image: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&q=80",
     status: "upcoming",
     description: "A night of live performances from top regional artists under the stars.",
+    featured: true,
   },
   {
     id: 4,
@@ -200,6 +203,7 @@ export const mockEvents = [
     image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&q=80",
     status: "past",
     description: "Hands-on session covering fundraising, pitch decks, and early-stage growth.",
+    featured: false,
   },
   {
     id: 5,
@@ -210,6 +214,7 @@ export const mockEvents = [
     image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80",
     status: "upcoming",
     description: "Showcasing the latest in medical devices, telehealth, and digital diagnostics.",
+    featured: false,
   },
   {
     id: 6,
@@ -220,6 +225,7 @@ export const mockEvents = [
     image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&q=80",
     status: "upcoming",
     description: "Creative leaders share insights on brand strategy and visual identity.",
+    featured: false,
   },
 ];
 
@@ -228,12 +234,15 @@ export const mockGallery = [
   { id: 2, image: "https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?w=600&q=80", caption: "Networking Session", size: "small" },
   { id: 3, image: "https://images.unsplash.com/photo-1511578314322-379afb476865?w=600&q=80", caption: "Keynote Speaker Address", size: "medium" },
   { id: 4, image: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=600&q=80", caption: "Global Trade Summit Panel", size: "small" },
-  { id: 5, image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=600&q=80", caption: "Exhibitor Booth Setup", size: "large" },
+  { id: 5, image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=600&q=80", caption: "Exhibitor Booth Setup", size: "medium" },
   { id: 6, image: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=600&q=80", caption: "Sunset Beats Music Festival", size: "medium" },
-  { id: 7, image: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=600&q=80", caption: "Live Performance Crowd", size: "small" },
-  { id: 8, image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=600&q=80", caption: "Startup Workshop Session", size: "large" },
+  { id: 7, image: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=600&q=80", caption: "Live Performance Crowd", size: "medium" },
+  { id: 8, image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=600&q=80", caption: "Startup Workshop Session", size: "medium" },
   { id: 9, image: "https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=600&q=80", caption: "Award Ceremony Moment", size: "medium" },
-  { id: 10, image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80", caption: "Conference Attendees Networking", size: "small" },
+  { id: 10, image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80", caption: "Conference Attendees Networking", size: "large" },
+  { id: 11, image: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=600&q=80", caption: "International Business Conference", size: "small" },
+  { id: 12, image: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=600&q=80", caption: "Outdoor Exhibition Event", size: "large" },
+  
 ];
 
 export const mockTestimonials = [

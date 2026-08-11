@@ -11,6 +11,7 @@ import LandingPage from './website/pages/LandingPage'
 import About from './website/pages/About'
 import LoginPage from './components/auth/LoginPage'
 import RegisterPage from './components/auth/RegisterPage'
+import Events from './website/pages/Events'
 
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
       <Route path="/admin/schedule" element={<AdminSchedule />} />
       <Route path="/about" element={<About />} />
       <Route path="/home" element={<LandingPage />} />
+      <Route path="/events" element={<Events />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/register" element={<RegisterPage />} />
     </Routes>
