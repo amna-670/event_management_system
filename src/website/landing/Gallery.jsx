@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import Masonry from "react-masonry-css";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -17,6 +18,8 @@ const sizeClasses = {
   medium: "h-64",
   large: "h-80",
 };
+
+const previewGallery = mockGallery.slice(0, 8);
 
 const Gallery = () => {
   const galleryRef = useRef(null);
@@ -63,7 +66,7 @@ const Gallery = () => {
           className="flex gap-4 w-full"
           columnClassName="flex flex-col gap-4"
         >
-          {mockGallery.map((item) => (
+          {previewGallery.map((item) => (
             <div
               key={item.id}
               className="gallery-item relative group overflow-hidden rounded-xl border border-border"
@@ -81,6 +84,15 @@ const Gallery = () => {
             </div>
           ))}
         </Masonry>
+
+        <div className="text-center mt-10">
+  <Link
+    to="/gallery"
+    className="inline-block rounded-md border border-gold px-6 py-2.5 text-sm font-semibold text-gold transition-all duration-300 hover:bg-gold/10"
+  >
+    View Full Gallery →
+  </Link>
+</div>
       </div>
     </section>
   );

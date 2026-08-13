@@ -12,6 +12,9 @@ import About from './website/pages/About'
 import LoginPage from './components/auth/LoginPage'
 import RegisterPage from './components/auth/RegisterPage'
 import Events from './website/pages/Events'
+import Contact from './website/pages/Contact'
+import GalleryPage from './website/pages/GalleryPage'
+
 
 
 function App() {
@@ -43,6 +46,9 @@ function App() {
       <Route path="/events" element={<Events />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/register" element={<RegisterPage />} />
+      <Route path="/contact" element={<Contact />} />
+      <Route path="/gallery" element={<GalleryPage />} />
+      
     </Routes>
 
     </>

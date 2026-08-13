@@ -56,7 +56,7 @@ const Navbar = () => {
           </Link>
 
           <Link
-            to="/#gallery"
+            to="/gallery"
             className="text-sm text-muted transition-colors hover:text-foreground"
           >
             Gallery
@@ -67,6 +67,12 @@ const Navbar = () => {
             className="text-sm text-muted transition-colors hover:text-foreground"
           >
             About
+          </Link>
+           <Link
+            to="/contact"
+            className="text-sm text-muted transition-colors hover:text-foreground"
+          >
+            Contact
           </Link>
         </nav>
 
@@ -124,7 +130,7 @@ const Navbar = () => {
             </Link>
 
             <Link
-              to="/#gallery"
+              to="/gallery"
               onClick={() => setIsOpen(false)}
               className="text-sm text-muted transition-colors hover:text-foreground"
             >
@@ -137,6 +143,14 @@ const Navbar = () => {
               className="text-sm text-muted transition-colors hover:text-foreground"
             >
               About
+            </Link>
+
+            <Link
+              to="/contact"
+              onClick={() => setIsOpen(false)}
+              className="text-sm text-muted transition-colors hover:text-foreground"
+            >
+              Contact
             </Link>
 
             {/* Mobile Theme Toggle */}

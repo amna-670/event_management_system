@@ -30,7 +30,7 @@ const Footer = () => (
         </Link>
 
         <Link
-          to="/#gallery"
+          to="/gallery"
           className="text-sm text-muted transition-colors hover:text-foreground"
         >
           Gallery
@@ -41,6 +41,12 @@ const Footer = () => (
           className="text-sm text-muted transition-colors hover:text-foreground"
         >
           About
+        </Link>
+        <Link
+          to="/contact"
+          className="text-sm text-muted transition-colors hover:text-foreground"
+        >
+          Contact
         </Link>
       </nav>
 
