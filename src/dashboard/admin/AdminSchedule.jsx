@@ -1,5 +1,5 @@
 import React from 'react'
-import AdminLayout from '@/components/Layout/admin/AdminLayout'
+import AdminLayout from "@/dashboard/layouts/AdminLayout"
 import { mockSchedule } from "@/data/mockData"
 
 

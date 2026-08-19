@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import AdminLayout from '@/components/Layout/admin/AdminLayout'
+import AdminLayout from "@/dashboard/layouts/AdminLayout"
 import { mockExpos } from "@/data/mockData"
 import {
   AlertDialog,

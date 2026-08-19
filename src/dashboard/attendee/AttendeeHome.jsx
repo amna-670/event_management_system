@@ -1,6 +1,5 @@
 import React from "react";
-import { useSelector } from "react-redux";
-import AttendeeLayout from "@/components/Layout/attendee/AttendeeLayout";
+import AttendeeLayout from "@/dashboard/layouts/AttendeeLayout";
 import StatCard from "@/website/StatCard";
 
 
@@ -24,8 +23,6 @@ const stats = [
 ];
 
 const AttendeeHome = () => {
-  const { currentUser } = useSelector((state) => state.auth);
-
   return (
     <AttendeeLayout>
       <div className="p-8">

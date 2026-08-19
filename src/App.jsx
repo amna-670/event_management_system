@@ -14,6 +14,15 @@ import RegisterPage from './components/auth/RegisterPage'
 import Events from './website/pages/Events'
 import Contact from './website/pages/Contact'
 import GalleryPage from './website/pages/GalleryPage'
+import AdminAnalytics from './dashboard/admin/AdminAnalytics'
+import AttendeeEvents from './dashboard/attendee/AttendeeEvents'
+import AttendeeExhibitors from './dashboard/attendee/AttendeeExhibitors'
+import AttendeeProfile from './dashboard/attendee/AttendeeProfile'
+import ExhibitorRegistration from './dashboard/exhibitor/ExhibitorRegistration'
+import ExhibitorBooth from './dashboard/exhibitor/ExhibitorBooth'
+import ExhibitorMessages from './dashboard/exhibitor/ExhibitorMessages'
+import ExhibitorProfile from './dashboard/exhibitor/ExhibitorProfile'
+import { DashboardRedirect, RequireAuth, RequireRole } from './components/auth/RouteGuards'
 
 
 
@@ -35,12 +44,6 @@ function App() {
 />
     <Routes>
       <Route path="/" element={<LandingPage />} />
-      <Route path="/admin" element={<AdminDashboard />} />
-      <Route path="/exhibitor" element={<ExhibitorPortal />} />
-      <Route path="/attendee" element={<AttendeeHome />} />
-      <Route path="/admin/expos" element={<AdminExpos />} />
-      <Route path="/admin/booths" element={<AdminBooths />} />
-      <Route path="/admin/schedule" element={<AdminSchedule />} />
       <Route path="/about" element={<About />} />
       <Route path="/home" element={<LandingPage />} />
       <Route path="/events" element={<Events />} />
@@ -48,6 +51,32 @@ function App() {
       <Route path="/register" element={<RegisterPage />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/gallery" element={<GalleryPage />} />
+      <Route element={<RequireAuth />}>
+        <Route path="/dashboard" element={<DashboardRedirect />} />
+
+        <Route element={<RequireRole allowedRoles={["admin"]} />}>
+          <Route path="/admin" element={<AdminDashboard />} />
+          <Route path="/admin/expos" element={<AdminExpos />} />
+          <Route path="/admin/booths" element={<AdminBooths />} />
+          <Route path="/admin/schedule" element={<AdminSchedule />} />
+          <Route path="/admin/analytics" element={<AdminAnalytics />} />
+        </Route>
+
+        <Route element={<RequireRole allowedRoles={["attendee"]} />}>
+          <Route path="/attendee" element={<AttendeeHome />} />
+          <Route path="/attendee/events" element={<AttendeeEvents />} />
+          <Route path="/attendee/exhibitors" element={<AttendeeExhibitors />} />
+          <Route path="/attendee/profile" element={<AttendeeProfile />} />
+        </Route>
+
+        <Route element={<RequireRole allowedRoles={["exhibitor"]} />}>
+          <Route path="/exhibitor" element={<ExhibitorPortal />} />
+          <Route path="/exhibitor/registration" element={<ExhibitorRegistration />} />
+          <Route path="/exhibitor/booth" element={<ExhibitorBooth />} />
+          <Route path="/exhibitor/messages" element={<ExhibitorMessages />} />
+          <Route path="/exhibitor/profile" element={<ExhibitorProfile />} />
+        </Route>
+      </Route>
       
     </Routes>
 

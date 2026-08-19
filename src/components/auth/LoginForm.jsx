@@ -49,16 +49,12 @@ const navigate = useNavigate();
 
   toast.success(`Welcome back, ${user.name}!`);
 
-  // Navigate based on role
-  if (user.role === "admin") {
-    navigate("/admin");
-  } else if (user.role === "exhibitor") {
-    navigate("/exhibitor");
-  } else if (user.role === "attendee") {
-    navigate("/attendee");
-  } else {
+  if (!user.role) {
     toast.error("Unknown user role.");
+    return;
   }
+
+  navigate("/dashboard");
 };
 
 const findUser = () => {

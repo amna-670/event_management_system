@@ -1,7 +1,6 @@
 import React from "react";
-import { useSelector } from "react-redux";
 import StatCard from "@/website/StatCard";
-import ExhibitorLayout from "@/components/Layout/exhibitor/ExhibitorLayout";
+import ExhibitorLayout from "@/dashboard/layouts/ExhibitorLayout";
 
 const stats = [
   {
@@ -23,8 +22,6 @@ const stats = [
 ];
 
 const ExhibitorPortal = () => {
-  const { currentUser } = useSelector((state) => state.auth);
-
   return (
     <ExhibitorLayout>
       <div className="p-8">

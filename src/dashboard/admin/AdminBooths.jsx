@@ -1,5 +1,5 @@
 import React from 'react'
-import AdminLayout from '@/components/Layout/admin/AdminLayout'
+import AdminLayout from "@/dashboard/layouts/AdminLayout"
 import { mockBooths } from "@/data/mockData"
 
 const statusStyles = {
