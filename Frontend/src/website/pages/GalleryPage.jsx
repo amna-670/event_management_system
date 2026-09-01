@@ -75,29 +75,26 @@ const GalleryPage = () => {
   return (
     <>
       <Navbar />
-
-      <section className="relative overflow-hidden border-b border-border">
+<section className="relative overflow-hidden border-b border-border">
   <div
     className="gallery-banner-image absolute inset-0 bg-cover bg-center"
     style={{ backgroundImage: `url(${galleryBanner})` }}
   />
 
-  <div
-    className="absolute inset-0"
-    style={{ backgroundColor: "var(--image-overlay)" }}
-  />
+  <div className="absolute inset-0 bg-black/45" />
+  <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/35 to-black/65" />
 
   <div className="relative z-10 text-center">
-    <div className="w-full bg-background/50 px-6 py-24">
+    <div className="w-full px-6 py-24">
       <span className="gallery-banner-content font-mono text-xs uppercase tracking-[0.2em] text-gold">
         EventSphere Gallery
       </span>
 
-      <h1 className="gallery-banner-content mt-4 font-display text-4xl font-bold text-foreground sm:text-5xl">
+      <h1 className="gallery-banner-content mt-4 font-display text-4xl font-bold text-white sm:text-5xl">
         Moments Worth Remembering
       </h1>
 
-      <p className="gallery-banner-content mx-auto mt-5 max-w-2xl text-foreground/90">
+      <p className="gallery-banner-content mx-auto mt-5 max-w-2xl text-white/80">
         Explore the people, places, and moments that bring every EventSphere
         experience to life.
       </p>

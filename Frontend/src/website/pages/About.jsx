@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import {
@@ -82,37 +81,32 @@ const About = () => {
       <Navbar />
 
       {/* Banner */}
-      <section
-  ref={bannerRef}
-  className="relative overflow-hidden border-b border-border"
->
-  <div
-    className="about-banner-image absolute inset-0 bg-cover bg-center"
-    style={{ backgroundImage: `url(${aboutBanner})` }}
-  />
+      <section ref={bannerRef} className="relative overflow-hidden border-b border-border">
+        <div
+          className="about-banner-image absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${aboutBanner})` }}
+        />
 
-  <div
-    className="absolute inset-0"
-    style={{ backgroundColor: "var(--image-overlay)" }}
-  />
+        <div className="absolute inset-0 bg-black/65" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/70" />
 
-  <div className="relative z-10 text-center">
-    <div className="w-full bg-background/70 px-6 py-24">
-      <span className="about-banner-content font-mono text-xs uppercase tracking-[0.2em] text-gold">
-        The EventSphere Experience
-      </span>
+        <div className="relative z-10 text-center">
+          <div className="w-full px-6 py-24">
+            <span className="about-banner-content font-mono text-xs uppercase tracking-[0.2em] text-gold">
+              The EventSphere Experience
+            </span>
 
-      <h1 className="about-banner-content mt-4 font-display text-4xl font-bold sm:text-5xl text-foreground">
-        Where Events Come Together
-      </h1>
+            <h1 className="about-banner-content mt-4 font-display text-4xl font-bold text-white sm:text-5xl">
+              Where Events Come Together
+            </h1>
 
-      <p className="about-banner-content mx-auto mt-5 max-w-2xl text-foreground/90">
-        A unified platform designed to connect organizers, exhibitors, and
-        attendees throughout every stage of an event.
-      </p>
-    </div>
-  </div>
-</section>
+            <p className="about-banner-content mx-auto mt-5 max-w-2xl text-white/80">
+              A unified platform designed to connect organizers, exhibitors, and
+              attendees throughout every stage of an event.
+            </p>
+          </div>
+        </div>
+      </section>
 
       <main className="min-h-screen bg-background px-6 py-16">
         <div className="max-w-5xl mx-auto space-y-16">
@@ -175,8 +169,10 @@ const About = () => {
             <div className="grid md:grid-cols-2 gap-6">
               <div className="flex gap-3">
                 <Zap className="w-5 h-5 text-gold shrink-0" />
+
                 <div>
                   <h4 className="font-semibold text-sm">Fast Response Time</h4>
+
                   <p className="text-xs text-muted">
                     Built for fast and responsive user interactions.
                   </p>
@@ -185,10 +181,12 @@ const About = () => {
 
               <div className="flex gap-3">
                 <ShieldCheck className="w-5 h-5 text-gold shrink-0" />
+
                 <div>
                   <h4 className="font-semibold text-sm">
                     Secure Authentication
                   </h4>
+
                   <p className="text-xs text-muted">
                     Role-based access control with secure authentication.
                   </p>

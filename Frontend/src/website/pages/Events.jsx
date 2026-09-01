@@ -27,76 +27,73 @@ const Events = () => {
       ? mockEvents
       : mockEvents.filter((event) => event.category === activeCategory);
 
- useEffect(() => {
-  const ctx = gsap.context(() => {
-    // Banner image animation
-    gsap.from(".events-banner-image", {
-      scale: 1.15,
-      duration: 1.6,
-      ease: "power2.out",
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // Banner image animation
+      gsap.from(".events-banner-image", {
+        scale: 1.15,
+        duration: 1.6,
+        ease: "power2.out",
+      });
+
+      // Banner text animation
+      gsap.from(".banner-content", {
+        opacity: 0,
+        y: 30,
+        duration: 0.8,
+        stagger: 0.15,
+        ease: "power2.out",
+        delay: 0.2,
+      });
+
+      // Event cards animation
+      gsap.from(".event-card", {
+        opacity: 0,
+        y: 50,
+        duration: 0.8,
+        stagger: 0.15,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 80%",
+          once: true,
+        },
+      });
     });
 
-    // Banner text animation
-    gsap.from(".banner-content", {
-      opacity: 0,
-      y: 30,
-      duration: 0.8,
-      stagger: 0.15,
-      ease: "power2.out",
-      delay: 0.2,
-    });
-
-    // Event cards animation
-    gsap.from(".event-card", {
-      opacity: 0,
-      y: 50,
-      duration: 0.8,
-      stagger: 0.15,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: "top 80%",
-        once: true,
-      },
-    });
-  });
-
-  return () => ctx.revert();
-}, []);
+    return () => ctx.revert();
+  }, []);
 
   return (
     <div className="bg-background min-h-screen">
       <Navbar />
 
-    
-<section className="relative overflow-hidden border-b border-border">
-  <div
-    className="events-banner-image absolute inset-0 bg-cover bg-center"
-    style={{ backgroundImage: `url(${eventsBanner})` }}
-  />
+      <section className="relative overflow-hidden border-b border-border">
+        <div
+          className="events-banner-image absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${eventsBanner})` }}
+        />
 
-  <div
-    className="absolute inset-0"
-    style={{ backgroundColor: "var(--image-overlay)" }}
-  />
+        <div className="absolute inset-0 bg-black/70" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/40" />
 
-  <div className="relative z-10 text-center">
-    <div className="w-full bg-background/70 px-6 py-24">
-      <span className="banner-content font-mono text-xs uppercase tracking-[0.2em] text-gold">
-        Browse All
-      </span>
+        <div className="relative z-10 text-center">
+          <div className="w-full px-6 py-24">
+            <span className="banner-content font-mono text-xs uppercase tracking-[0.2em] text-gold">
+              Browse All
+            </span>
 
-      <h1 className="banner-content mt-4 font-display text-4xl font-bold text-foreground sm:text-5xl">
-        Explore Our Events
-      </h1>
+            <h1 className="banner-content mt-4 font-display text-4xl font-bold text-white sm:text-5xl">
+              Explore Our Events
+            </h1>
 
-      <p className="banner-content mx-auto mt-5 max-w-2xl text-foreground/90">
-        Explore every expo, conference, concert, and workshop hosted on
-        EventSphere.
-      </p>
-    </div>
-  </div>
-</section>
+            <p className="banner-content mx-auto mt-5 max-w-2xl text-white/80">
+              Explore every expo, conference, concert, and workshop hosted on
+              EventSphere.
+            </p>
+          </div>
+        </div>
+      </section>
 
       <EventCategories
         activeCategory={activeCategory}
@@ -146,7 +143,6 @@ const Events = () => {
                     <div className="flex flex-col gap-1.5 text-sm text-muted">
                       <div className="flex items-center gap-2">
                         <CalendarDays size={14} className="text-gold" />
-
                         {new Date(event.date).toLocaleDateString("en-US", {
                           month: "short",
                           day: "numeric",
@@ -156,7 +152,6 @@ const Events = () => {
 
                       <div className="flex items-center gap-2">
                         <MapPin size={14} className="text-gold" />
-
                         {event.location}
                       </div>
                     </div>
@@ -174,4 +169,3 @@ const Events = () => {
 };
 
 export default Events;
-
