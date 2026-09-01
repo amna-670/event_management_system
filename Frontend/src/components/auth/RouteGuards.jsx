@@ -19,7 +19,7 @@ export const RequireRole = ({ allowedRoles }) => {
 
   if (!currentUser) {
     return <Navigate to="/login" replace />;
-  }
+  }c
 
   if (!allowedRoles.includes(currentUser.role)) {
     return <Navigate to={getRoleHomePath(currentUser.role)} replace />;
