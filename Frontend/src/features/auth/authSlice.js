@@ -33,8 +33,10 @@ export const registerUser = createAsyncThunk(
 );
 
 
+const storedUser = localStorage.getItem("eventsphere_current_user");
+
 const initialState = {
-  user: null,
+  user: storedUser ? JSON.parse(storedUser) : null,
   error: null,
   loading: false,
 };

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import AdminDashboard from './dashboard/admin/AdminDashboard'
 import ExhibitorPortal from './dashboard/exhibitor/ExhibitorPortal'
@@ -23,12 +23,15 @@ import ExhibitorBooth from './dashboard/exhibitor/ExhibitorBooth'
 import ExhibitorMessages from './dashboard/exhibitor/ExhibitorMessages'
 import ExhibitorProfile from './dashboard/exhibitor/ExhibitorProfile'
 import { DashboardRedirect, RequireAuth, RequireRole } from './components/auth/RouteGuards'
+import useInitTheme from './hooks/useInitTheme'
 
 
 
 function App() {
+    useInitTheme();
   return (
-    <>
+     <>
+    
      <Toaster
   theme="dark"
   position="top-right"
@@ -42,6 +45,7 @@ function App() {
     },
   }}
 />
+
     <Routes>
       <Route path="/" element={<LandingPage />} />
       <Route path="/about" element={<About />} />
