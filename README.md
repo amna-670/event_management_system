@@ -1,60 +1,63 @@
 # EventSphere Management
 
-## Project Status: 🚧 Incomplete / Under Development
+## Project Status: 🚧 In Progress
 
 EventSphere Management is a MERN stack capstone project focused on creating an expo and trade show management platform.
 
-The project is currently under development and is **not yet complete**. The current version contains the frontend implementation and several core UI features, while backend integration and some advanced functionalities are still in progress.
+The frontend is fully built. The backend is being developed incrementally — authentication (register, login, logout) is complete and connected to MongoDB Atlas, with more features in progress.
+
+## Project Structure
+
+- `Frontend/` — React + Vite frontend
+- `Backend/` — Node.js + Express + MongoDB backend
 
 ## Current Features Implemented
 
-* Modern dark-themed convention floor UI
-* Landing page with responsive sections
-* Admin dashboard interface
-* Expo management UI
-* Booth management UI
-* Schedule management UI
-* Exhibitor portal interface
-* Attendee portal interface
-* Role-based login flow (Admin, Exhibitor, Attendee)
-* Redux Toolkit setup for authentication state
-* Responsive layouts and reusable components
-* Toast notifications
-* Charts and data visualization
+- Modern dark-themed convention floor UI
+- Landing page with responsive sections
+- Admin dashboard interface (Expo, Booth, Schedule, Exhibitor management)
+- Exhibitor portal interface
+- Attendee portal interface
+- Real authentication (Register/Login/Logout) connected to MongoDB Atlas
+- Password hashing (bcrypt), server-side validation
+- Redux Toolkit auth state with persistence across refresh
+- Role-based protected routes (Admin, Exhibitor, Attendee)
+- Toast notifications (Sonner)
+- Charts and data visualization
 
 ## Features Still In Progress
 
-The following features are planned but not completed yet:
-
-* Backend development using Express.js and MongoDB
-* Real authentication system
-* User registration with database storage
-* Protected routes
-* Complete exhibitor management workflow
-* Booth selection and reservation system
-* Floor plan integration
-* Messaging system between users
-* Event registration system
-* Notifications and reminders
-* Complete admin analytics module
+- ExhibitorApplication workflow (approve/reject exhibitor applications)
+- Booth selection and reservation system (real logic)
+- Floor plan integration
+- Messaging system between users
+- Event registration system (attendee side)
+- Notifications and reminders
+- Complete admin analytics module (real data)
+- JWT-based authentication (upgrade from current session handling)
 
 ## Tech Stack
 
-* React + Vite
-* JavaScript
-* Tailwind CSS v4
-* React Router DOM
-* Redux Toolkit
-* Recharts
-* Lucide React
-* shadcn/ui
-* Sonner Notifications
-* (Backend will be added later)
+**Frontend:** React + Vite, Tailwind CSS v4, React Router DOM, Redux Toolkit, Recharts, Lucide React, shadcn/ui, Sonner
+
+**Backend:** Node.js, Express, MongoDB (Mongoose), bcrypt
+
+## Setup
+
+\`\`\`bash
+# Frontend
+cd Frontend
+npm install
+npm run dev
+
+# Backend
+cd Backend
+npm install
+npm start
+\`\`\`
+
+Backend requires a `.env` file with `PORT` and `MONGODB_URI` — not included in the repo for security.
 
 ## Project Purpose
 
-This project is being developed as a learning-focused MERN capstone project. The goal is to gradually build a complete expo management platform while improving frontend architecture, state management, authentication, and backend integration skills.
-
-## Note
-
-This repository represents an ongoing project. The application is currently incomplete and additional features will be implemented in future updates.
+This project is being developed as a learning-focused MERN capstone project to gradually build a complete expo management platform while improving frontend architecture, state management, authentication, and backend integration skills.
