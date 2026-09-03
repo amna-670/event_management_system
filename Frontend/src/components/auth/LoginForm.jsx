@@ -2,14 +2,13 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Mail, LockKeyhole } from "lucide-react";
 import { toast } from "sonner";
-import { mockUsers } from "@/data/mockUsers";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
-import { useDispatch } from "react-redux";
-import { login } from "@/features/auth/authSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { loginUser } from "@/features/auth/authSlice";
 
 const LoginForm = () => {
   const [formData, setFormData] = useState({
@@ -18,7 +17,9 @@ const LoginForm = () => {
   });
 
   const dispatch = useDispatch();
-const navigate = useNavigate();
+  const navigate = useNavigate();
+
+  const { loading } = useSelector((state) => state.auth);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -29,7 +30,7 @@ const navigate = useNavigate();
     });
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
   event.preventDefault();
 
   if (!formData.email || !formData.password) {
@@ -37,32 +38,29 @@ const navigate = useNavigate();
     return;
   }
 
-  const user = findUser();
+  try {
+    const result = await dispatch(loginUser(formData)).unwrap();
 
-  if (!user) {
-    toast.error("Invalid email or password.");
-    return;
+    const user = result.user;
+
+    toast.success(`Welcome back, ${user.name}!`);
+
+    setFormData({
+      email: "",
+      password: "",
+    });
+
+    navigate("/dashboard");
+
+  } catch (error) {
+    console.error("Login error:", error);
+
+    toast.error(
+      error?.error ||
+      error?.msg ||
+      "Unable to connect to the server."
+    );
   }
-
-  // Save the logged-in user in Redux
-  dispatch(login(user));
-
-  toast.success(`Welcome back, ${user.name}!`);
-
-  if (!user.role) {
-    toast.error("Unknown user role.");
-    return;
-  }
-
-  navigate("/dashboard");
-};
-
-const findUser = () => {
-  return mockUsers.find(
-    (user) =>
-      user.email === formData.email &&
-      user.password === formData.password
-  );
 };
 
   return (
@@ -120,9 +118,10 @@ const findUser = () => {
       {/* Login Button */}
       <Button
         type="submit"
+        disabled={loading}
         className="w-full bg-gold text-background hover:bg-gold/90"
       >
-        Sign In
+        {loading ? "Signing In..." : "Sign In"}
       </Button>
 
       {/* Register Link */}

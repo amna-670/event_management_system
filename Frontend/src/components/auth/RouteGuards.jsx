@@ -4,10 +4,10 @@ import { useSelector } from "react-redux";
 import { getRoleHomePath } from "@/dashboard/dashboardConfig";
 
 export const RequireAuth = () => {
-  const { currentUser } = useSelector((state) => state.auth);
+  const { user } = useSelector((state) => state.auth);
   const location = useLocation();
 
-  if (!currentUser) {
+  if (!user) {
     return <Navigate to="/login" replace state={{ from: location }} />;
   }
 
@@ -15,26 +15,25 @@ export const RequireAuth = () => {
 };
 
 export const RequireRole = ({ allowedRoles }) => {
-  const { currentUser } = useSelector((state) => state.auth);
+  const { user } = useSelector((state) => state.auth);
 
-  if (!currentUser) {
+  if (!user) {
     return <Navigate to="/login" replace />;
-  }c
+  }
 
-  if (!allowedRoles.includes(currentUser.role)) {
-    return <Navigate to={getRoleHomePath(currentUser.role)} replace />;
+  if (!allowedRoles.includes(user.role)) {
+    return <Navigate to={getRoleHomePath(user.role)} replace />;
   }
 
   return <Outlet />;
 };
 
 export const DashboardRedirect = () => {
-  const { currentUser } = useSelector((state) => state.auth);
+  const { user } = useSelector((state) => state.auth);
 
-  if (!currentUser) {
+  if (!user) {
     return <Navigate to="/login" replace />;
   }
 
-  return <Navigate to={getRoleHomePath(currentUser.role)} replace />;
+  return <Navigate to={getRoleHomePath(user.role)} replace />;
 };
-
