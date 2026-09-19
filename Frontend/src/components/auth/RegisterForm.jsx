@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   Mail,
   LockKeyhole,
@@ -29,6 +29,8 @@ const RegisterForm = () => {
     confirmPassword: "",
     phone: "",
   });
+
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -87,6 +89,8 @@ const RegisterForm = () => {
       confirmPassword: "",
       phone: "",
     });
+
+    navigate("/login");
 
   } catch (error) {
     console.error("Registration error:", error);
