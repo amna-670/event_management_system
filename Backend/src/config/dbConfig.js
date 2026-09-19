@@ -1,16 +1,16 @@
 import mongoose from "mongoose";
 
-let isConnected = false;
+let connectionPromise = null;
 
-const database = async () => {
-  if (isConnected) return;
-  try {
-    await mongoose.connect(process.env.MONGODB_URI);
-    isConnected = true;
-    console.log("Database connected");
-  } catch (e) {
-    console.log(e);
+const database = () => {
+  if (!connectionPromise) {
+    connectionPromise = mongoose.connect(process.env.MONGODB_URI, {
+      serverSelectionTimeoutMS: 8000,
+    }).then(() => {
+      console.log("Database connected");
+    });
   }
+  return connectionPromise;
 };
 
 export default database
